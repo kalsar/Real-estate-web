@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.route.js';
 
    dotenv.config();
 
@@ -18,3 +19,10 @@ import dotenv from 'dotenv';
     app.listen(3000 ,()=>{
         console.log("Server is running on port:3000!");
     });
+
+    
+    app.use("/api/user",userRouter);
+
+    // req:- req is tha data that we get from client side(from browser)
+
+    // resp:- resp is tha data that we send back from server side(from database)
